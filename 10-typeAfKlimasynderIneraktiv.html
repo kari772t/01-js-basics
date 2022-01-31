@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="da">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS BASICS 10_typeAfKlimasynderIneraktiv</title>
+	</head>
+	<body>
+		<h1>Hello, anyone there?</h1>
+		<p>Indtast venligst varighed i timer af din flyrejse</p>
+
+		<input class="length_input" type="text" placeholder="Varighed" />
+		<button class="submit">Indsend</button>
+		<h3 class="sum">En flyrejse på - udleder - CO2</h3>
+
+		<script>
+			let h1 = document.querySelector("h1");
+			function co2UdledtIKgVedFlyrejse(tid) {
+				let udledt = tid * 109;
+				return udledt;
+			}
+
+			let h3 = document.querySelector(".sum");
+			let submitBtn = document
+				.querySelector(".submit")
+				.addEventListener("click", (e) => {
+					let length = document.querySelector(".length_input").value;
+					if (isNaN(length)) {
+						alert("Indtast kun tal");
+					} else if (length <= 0) {
+						alert("Indtast kun positive tal");
+					} else {
+						h3.innerHTML = `En flyrejse på ${length} timer udleder ${co2UdledtIKgVedFlyrejse(
+							length
+						)}kg CO2`;
+						console.log(
+							`En flyrejse på ${length} timer udleder ${co2UdledtIKgVedFlyrejse(
+								length
+							)}kg CO2`
+						);
+					}
+				});
+		</script>
+	</body>
+</html>
