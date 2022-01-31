@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS BASICS 09_type_af_klimasynder</title>
+  </head>
+  <body>
+    <h1>Hello, anyone there?</h1>
+
+    <script>
+      let h1 = document.querySelector("h1");
+      let tid = 4;
+      function co2UdledtIKgVedFlyrejse(tid) {
+        let udledt = tid * 109;
+
+        if (udledt < 100) {
+          console.log(
+            `Du har fløjet ${tid} timer og udledt ${udledt}kg CO2.\nTæt på Thunberg`
+          );
+        } else if (udledt >= 100 && udledt < 200) {
+          console.log(
+            `Du har fløjet ${tid} timer og udledt ${udledt}kg CO2.\nJa ja, du behøver ikke at melde dig ud a Å!`
+          );
+        } else if (udledt >= 200 && udledt < 600) {
+          console.log(
+            `Du har fløjet ${tid} timer og udledt ${udledt}kg CO2.\nDet er godt for turismen i nordeuropa.`
+          );
+        } else {
+          console.log(
+            `Du har fløjet ${tid} timer og udledt ${udledt}kg CO2.\nNå ja vi kan jo altid kolonisere en anden planet...`
+          );
+        }
+      }
+
+      co2UdledtIKgVedFlyrejse(tid);
+    </script>
+  </body>
+</html>
