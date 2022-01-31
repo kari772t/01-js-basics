@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS BASICS 08_co2_beregning</title>
+  </head>
+  <body>
+    <h1>Hello, anyone there?</h1>
+
+    <script>
+      let h1 = document.querySelector("h1");
+      let tid = 3;
+      function co2UdledtIKgVedFlyrejse(tid) {
+        let udledt = tid * 109;
+        console.log(
+          `Ved ${tid} timers flyverejse har du udledt ${udledt}kg CO2`
+        );
+      }
+
+      co2UdledtIKgVedFlyrejse(tid);
+    </script>
+  </body>
+</html>
