@@ -7,7 +7,7 @@
     <title>JS BASICS 06-arealFejl</title>
   </head>
   <body>
-    <h1>Hello, anyone there?</h1>
+    <h1>JS BASICS 06-arealFejl</h1>
     <p>Hvad er længden?</p>
     <input type="text" id="længde" />
     <p>Hvad er bredden?</p>
@@ -15,19 +15,25 @@
     <button>Klik på beregn arealet, kig i console</button>
 
     <script>
+      // Med udgangspunkt i øv5. Ændre koden, så det tager højde for fejldata og giver brugeren en fejlmelding.
+
       document.querySelector("button").addEventListener("click", buttonClick);
+     
+     
       function buttonClick() {
         let længde = document.querySelector("#længde").value;
         let bredde = document.querySelector("#bredde").value;
         let a = areal(længde, bredde);
+       
+    
+
         let resultat;
         if (isNaN(a)) {
           resultat = "Dette er ikke et tal. Prøv igen!";
         } else if (a <= 0) {
           resultat = "Arealet er mindre end nul. Prøv igen!";
-        }
-        else {
-          resultat = `Arealet er ${a}`;
+        } else {
+          resultat = `Arealet er ${a} m2`;
         }
 
         console.log(resultat);

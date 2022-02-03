@@ -7,11 +7,18 @@
     <title>JS BASICS 07-sigGodmorgen</title>
   </head>
   <body>
-    <h1>Hello, anyone there?</h1>
+    <h2>JS BASICS 07-sigGodmorgen</h2>
+    <!-- Jeg laver en tom h1 i html for at gøre plads til min tekst jeg diffierer i JS -->
+    <h1></h1>
 
     <script>
+      // Jeg laver en variable der tager fat i h1
+      // Jeg laver en variabel der henter tiden på døgnet.
+
       let h1 = document.querySelector("h1");
       let time = new Date().getHours();
+      // Mellem 5 0g 10 skrives som: er tiden >(større end), && bruges mellem to betingelser, <= (mindre end eller lig med)
+      // Man bruger innerHTML til at ændre indhold i HTML.
 
       if (time > 5 && time <= 10) {
         h1.innerHTML = `Godmorgen, klokken er ${time}`;

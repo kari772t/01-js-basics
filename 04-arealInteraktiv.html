@@ -7,20 +7,31 @@
     <title>JS BASICS 04-arealInteraktiv</title>
   </head>
   <body>
-    <h1>Hello, anyone there?</h1>
+    <h1>JS BASICS 04-arealInteraktiv</h1>
+    <h3>BEREGN AREALET</h3>
+
     <p>Hvad er længden?</p>
     <input type="text" id="længde" />
     <p>Hvad er bredden?</p>
     <input type="text" id="bredde" />
-    <button>Klik på beregn arealet, kig i console</button>
+    <button>Klik og beregn arealet. Kig i konsollen</button>
 
     <script>
+      // Jeg laver en funktion der fortæller hvad der skal ske, når jeg trykker på knappen.
+      // Først laver jeg en let variabel der henter længden og en der henter bredden. De hentes som id'er fra mine inputfelter.
+      // Jeg laver en let variabel for udreningen af arealet.
+
+      //
+
       document.querySelector("button").addEventListener("click", buttonClick);
+
       function buttonClick() {
         let længde = document.querySelector("#længde").value;
         let bredde = document.querySelector("#bredde").value;
         let areal = længde * bredde;
-        let resultat = `Længden er ${længde} meter og bredden er ${bredde} meter. Arealet er ${areal}`;
+        // Jeg laver en let variabel for resultatet der skal stå i konsollen.
+        // I den har jeg brugt template literals med back-ticks som gør det muligt både at have værdier og tekst i en string.
+        let resultat = `Længden er ${længde} meter og bredden er ${bredde} meter. Arealet er ${areal} m2`;
         console.log(resultat);
       }
     </script>

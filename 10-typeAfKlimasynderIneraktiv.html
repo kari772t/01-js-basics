@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="da">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>JS BASICS 10-typeAfKlimasynderIneraktiv</title>
-	</head>
-	<body>
-		<h1>Hello, anyone there?</h1>
-		<p>Indtast venligst varighed i timer af din flyrejse</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS BASICS 10-typeAfKlimasynderIneraktiv</title>
+  </head>
+  <body>
+    <h1>JS BASICS 10-typeAfKlimasynderInteraktiv</h1>
 
-		<input class="length_input" type="text" placeholder="Varighed" />
-		<button class="submit">Indsend</button>
-		<h3 class="sum">En flyrejse på - udleder - CO2</h3>
+    <p>Indtast venligst varighed i timer af din flyrejse</p>
 
-		<script>
-			let h1 = document.querySelector("h1");
-			function co2UdledtIKgVedFlyrejse(tid) {
-				let udledt = tid * 109;
-				return udledt;
-			}
+    <input type="text" id="timer" />
 
-			let h3 = document.querySelector(".sum");
-			let submitBtn = document
-				.querySelector(".submit")
-				.addEventListener("click", (e) => {
-					let length = document.querySelector(".length_input").value;
-					if (isNaN(length)) {
-						alert("Indtast kun tal");
-					} else if (length <= 0) {
-						alert("Indtast kun positive tal");
-					} else {
-						h3.innerHTML = `En flyrejse på ${length} timer udleder ${co2UdledtIKgVedFlyrejse(
-							length
-						)}kg CO2`;
-						console.log(
-							`En flyrejse på ${length} timer udleder ${co2UdledtIKgVedFlyrejse(
-								length
-							)}kg CO2`
-						);
-					}
-				});
-		</script>
-	</body>
+    <button>Indsend</button>
+
+    <script>
+      let timer;
+
+      let co2UdledtIKgVedFlyrejse;
+      let klimaSynderKommentar;
+      document.querySelector("button").addEventListener("click", buttonClicked);
+
+      function buttonClicked() {
+        timer = document.querySelector("#timer").value;
+
+        if (isNaN(timer) || timer == "") {
+          console.log("Du har ikke tastet et tal ind!");
+        } else {
+          co2UdledtIKgVedFlyrejse = Math.round(timer * 109);
+
+          if (co2UdledtIKgVedFlyrejse < 100) {
+            klimaSynderKommentar = "Tæt på Thunberg.";
+          } else if (co2UdledtIKgVedFlyrejse < 200) {
+            klimaSynderKommentar =
+              "Ja ja, du behøver ikke at melde dig ud af Å!";
+          } else if (co2UdledtIKgVedFlyrejse < 600) {
+            klimaSynderKommentar = "Det er godt for turismen i nordeuropa.";
+          } else {
+            klimaSynderKommentar =
+              "Nå ja vi kan jo altid kolonisere en anden planet ...";
+          }
+          console.log(
+            `Du har fløjet ${timer} timer og udledt ${co2UdledtIKgVedFlyrejse} kg CO2. ${klimaSynderKommentar}`
+          );
+        }
+      }
+    </script>
+  </body>
 </html>

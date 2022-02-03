@@ -7,19 +7,19 @@
     <title>JS BASICS 08-co2Beregning</title>
   </head>
   <body>
-    <h1>Hello, anyone there?</h1>
+    <h1>JS BASICS 08-co2Beregning</h1>
 
     <script>
-      let h1 = document.querySelector("h1");
-      let tid = 3;
-      function co2UdledtIKgVedFlyrejse(tid) {
-        let udledt = tid * 109;
-        console.log(
-          `Ved ${tid} timers flyverejse har du udledt ${udledt}kg CO2`
-        );
-      }
+      // Jeg skal lave et program, som udregner i konsollen hvor meget CO2 du bruger på en flyrejse:
 
-      co2UdledtIKgVedFlyrejse(tid);
+      // Laver en variabel der angiver timer fløjet
+      let timer = 3;
+      // Laver en variabel der udregner co2 pr rejse
+      let co2UdledtIKgVedFlyrejse = timer * 109;
+      //Beder konsollen udskrive
+      console.log(
+        `Ved ${timer} timers flyrejse har du udledt ${co2UdledtIKgVedFlyrejse} kg CO2`
+      );
     </script>
   </body>
 </html>

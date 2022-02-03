@@ -7,16 +7,25 @@
     <title>JS BASICS 03 goddag</title>
   </head>
   <body>
-    <h1>Hello, anyone there?</h1>
+    <h1>JS BASICS 03 goddag</h1>
+    <p>Hvad er dit navn?</p>
 
     <input type="text" id="navn" />
     <button>Klik og kig i console</button>
+
     <script>
-      document.querySelector("button").addEventListener("click", buttonClicked);
+      // Jeg laver en function som fortæller hvad der skal ske når buttonClicked er kaldt.
+      // Jeg laver en let variabel der hedder brugerNavn, som ....
+      // Jeg kalder knappen med d.qs og lytter med efter click, for at udløse handlingen buttonclicked.
+      // Jeg laver funktionen ved at tage fat i input feltets id #navn og slutter med .value for at få værdien fra input feltet.
+      // Jeg laver resultatet af funktionen til en let variabel (brugerNavn), for at forenkle strengen til console log. Man skulle ha skrevet document.querySelector("#navn").value istedet for brugerNavn, hvis let ikke var lavet.
+      // Jag laver template literals med back-ticks som gør det muligt både at have værdier og tekst i en string.
+
       function buttonClicked() {
         let brugerNavn = document.querySelector("#navn").value;
-        console.log(`Tillykke dit navn er ${brugerNavn}`);
+        console.log(`Goddag ${brugerNavn}`);
       }
+      document.querySelector("button").addEventListener("click", buttonClicked);
     </script>
   </body>
 </html>

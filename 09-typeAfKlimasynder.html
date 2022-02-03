@@ -7,34 +7,29 @@
     <title>JS BASICS 09-typeAfKlimasynder</title>
   </head>
   <body>
-    <h1>Hello, anyone there?</h1>
+    <h1>JS BASICS 09-typeAfKlimasynder</h1>
 
     <script>
-      let h1 = document.querySelector("h1");
-      let tid = 4;
-      function co2UdledtIKgVedFlyrejse(tid) {
-        let udledt = tid * 109;
-
-        if (udledt < 100) {
-          console.log(
-            `Du har fløjet ${tid} timer og udledt ${udledt}kg CO2.\nTæt på Thunberg`
-          );
-        } else if (udledt >= 100 && udledt < 200) {
-          console.log(
-            `Du har fløjet ${tid} timer og udledt ${udledt}kg CO2.\nJa ja, du behøver ikke at melde dig ud a Å!`
-          );
-        } else if (udledt >= 200 && udledt < 600) {
-          console.log(
-            `Du har fløjet ${tid} timer og udledt ${udledt}kg CO2.\nDet er godt for turismen i nordeuropa.`
-          );
-        } else {
-          console.log(
-            `Du har fløjet ${tid} timer og udledt ${udledt}kg CO2.\nNå ja vi kan jo altid kolonisere en anden planet...`
-          );
-        }
+      // variable der angiver varigheden på flyrejsen
+      let timer = 4;
+      // variabel der udregner co2 forbruget.
+      let co2UdledtIKgVedFlyrejse = timer * 109;
+      // variabel der indikerer hvilken kategori man tilhører.
+      let klimaSynderKommentar;
+      if (co2UdledtIKgVedFlyrejse < 100) {
+        klimaSynderKommentar = "Tæt på Thunberg.";
+      } else if (co2UdledtIKgVedFlyrejse < 200) {
+        klimaSynderKommentar = "Ja ja, du behøver ikke at melde dig ud af Å!";
+      } else if (co2UdledtIKgVedFlyrejse < 600) {
+        klimaSynderKommentar = "Det er godt for turismen i nordeuropa.";
+      } else {
+        klimaSynderKommentar =
+          "Nå ja vi kan jo altid kolonisere en anden planet ...";
       }
-
-      co2UdledtIKgVedFlyrejse(tid);
+      //Beder konsollen udskrive
+      console.log(
+        `Du har fløjet ${timer} timer og udledt ${co2UdledtIKgVedFlyrejse} kg CO2. ${klimaSynderKommentar}`
+      );
     </script>
   </body>
 </html>

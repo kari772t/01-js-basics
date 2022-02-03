@@ -7,23 +7,29 @@
     <title>JS BASICS 02 arealTest</title>
   </head>
   <body>
-    <h1>Hello, anyone there?</h1>
+    <h1>JS BASICS 02 arealTest</h1>
 
     <script>
-      let længde = 30;
+      let længde = 25;
       let bredde = 4;
       let areal = længde * bredde;
-      let resultat;
+      let resultat = "fejl";
+      // Jeg har sat resultat = "fejl" for at vise i konsollen, hvis ingen af if, if else el else er gældende.
+      // Der behøver ikke at står noget, hvis man ikke .
+
+      //if-statement: if(betingelse/condition){
+      //                  statement;
+      //                  }
 
       if (areal < 100) {
         resultat = "Arealet er for lille";
       } else if (areal < 200) {
-        resultat = "Arealet er OK";
+        resultat = `Arealet er OK: Det er nemlig ${længde * bredde} m2`;
       } else {
         resultat = "Arealet er for stort";
       }
-
       console.log(resultat);
+      // i else if statement har jeg sat en udregning ind. Dvs hele strengen skal være med ``og udregningen i ${} så den ved at den skal hente info fra variablerne (let).
     </script>
   </body>
 </html>
